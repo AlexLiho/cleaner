@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  phone: MyText
+  comment: MyText
+  total_price: 9.99
+  total_time_for_gob: 2016-01-04 10:48:15
+  wishes_date: 2016-01-04 10:48:15
+  cleaners_date: 2016-01-04 10:48:15
+
+two:
+  name: MyText
+  phone: MyText
+  comment: MyText
+  total_price: 9.99
+  total_time_for_gob: 2016-01-04 10:48:15
+  wishes_date: 2016-01-04 10:48:15
+  cleaners_date: 2016-01-04 10:48:15

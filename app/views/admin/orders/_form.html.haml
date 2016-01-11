@@ -1,0 +1,26 @@
+= form_for [:admin, @order] do |f|
+  = render 'errors', object: @order
+
+  %p
+    = f.label :name
+    = f.text_area :name, class: "form-control"
+  %p
+    = f.label :phone
+    = f.text_area :phone, class: "form-control"
+  %p
+    = f.label :comment
+    = f.text_area :comment, class: "form-control"
+  %p
+    = f.label :total_price
+    = f.text_field :total_price, class: "form-control"
+  %p
+    = f.label :total_time_for_gob
+    = f.text_field :total_time_for_gob, maxlength: 4
+  %p
+    = f.label :wishes_date
+    = f.datetime_select :wishes_date, class: "form-control"
+  %p
+    = f.label :cleaners_date
+    = f.datetime_select :cleaners_date, class: "form-control"
+  .actions
+    = f.submit 'Save', class: "btn btn-primary"

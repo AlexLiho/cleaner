@@ -1,0 +1,34 @@
+= form_for [:admin, @product] do |f|
+  = render 'errors', object: @product
+
+  %h3 Generals
+
+  %p
+    - if General.all.present?
+      / = f.content_tag(:option, general.title, id: general.id, value: general.quantity)
+      = content_tag(:div, class: "general_calculator") do
+        %ul
+          %li
+            - General.find(1) do |g|
+              = content_tag(:span, g.title, id: g.id, value: g.price)
+              = f.number_field :quantity, id: g.id, value: 1, min: 1, max: 6
+          %li
+            = content_tag(:span, General.find(2).title)
+            / = select_tag :general_id, options_for_select([ [ General.find(2).description, General.find(2).id ], [ General.find(3).description, General.find(3).id ], [ General.find(4).description, General.find(4).id ] ])
+            = f.collection_select :general_id, General.order(:id), :id, :title, { prompt: 'Выберите какую-то херню...' }  #, { class: 'form-control' }
+
+  
+  %h3 Additionals
+  - if Additional.all.present?
+    = content_tag(:div, class: "additional_calculator") do
+      %ul
+        - Additional.all.each do |a|
+          %li
+            = content_tag( :span , a.title, id: a.id, value: a.quantity)
+            = f.number_field :quantity, id: a.id, value: 0, min: 0, max: 9, class: "text-right"
+
+  %p
+    = f.label :active
+    = f.check_box :active
+  .actions
+    = f.submit 'Save', class: "btn btn-primary"

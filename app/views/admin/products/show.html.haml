@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b General:
+  = @product.general_id
+%p
+  %b Additional:
+  = @product.additional_id
+%p
+  %b Active:
+  = @product.active
+
+= link_to 'Edit', edit_admin_product_path(@product)
+\|
+= link_to 'Back', admin_products_path

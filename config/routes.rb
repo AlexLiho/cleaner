@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root 'general#index'
+  
   resources :pages, only: [:show]
+  resources :employes, only: [:show]
 
   namespace :admin do
     resources :pages
+    resources :employes
   end
   
   Page.where("slug <> ''").all.each do |page|

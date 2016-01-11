@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @additional.title
+%p
+  %b Description:
+  = @additional.description
+%p
+  %b Price:
+  = @additional.price
+%p
+  %b Time for job:
+  = @additional.time_for_job
+
+= link_to 'Edit', edit_admin_additional_path(@additional)
+\|
+= link_to 'Back', admin_additionals_path

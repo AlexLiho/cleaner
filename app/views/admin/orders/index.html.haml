@@ -1,0 +1,33 @@
+%h1 Listing orders
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Phone
+      %th Comment
+      %th Total price
+      %th Total time for gob
+      %th Wishes date
+      %th Cleaners date
+      %th
+      %th
+      %th
+
+  %tbody
+    - @orders.each do |order|
+      %tr
+        %td= order.name
+        %td= order.phone
+        %td= order.comment
+        %td= order.total_price
+        %td= order.total_time_for_gob
+        %td= order.wishes_date
+        %td= order.cleaners_date
+        %td= link_to 'Show', admin_order_path(order)
+        %td= link_to 'Edit', edit_admin_order_path(order)
+        %td= link_to 'Destroy', admin_order_path(order), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Order', new_admin_order_path, class: "btn btn-primary"

@@ -1,0 +1,24 @@
+%h1 Listing employes
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Photo
+      %th Name
+      %th Comment
+      %th
+      %th
+
+  %tbody
+    - @employes.each do |employe|
+      %tr
+        %td= link_to image_tag(employe.image_url.thumb, class: "img-circle"), admin_employe_path(employe)
+        %td= employe.name
+        %td= employe.comment
+        / %td= employe.image_url
+        %td= link_to 'Edit', edit_admin_employe_path(employe)
+        %td= link_to 'Destroy', admin_employe_path(employe), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Employe', new_admin_employe_path, class: "btn btn-primary"

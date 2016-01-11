@@ -1,0 +1,27 @@
+%h1 Listing additionals
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Price
+      %th Time for job
+      %th
+      %th
+      %th
+
+  %tbody
+    - @additionals.each do |additional|
+      %tr
+        %td= additional.title
+        %td= additional.description
+        %td= additional.price
+        %td= additional.time_for_job
+        %td= link_to 'Show', admin_additional_path(additional)
+        %td= link_to 'Edit', edit_admin_additional_path(additional)
+        %td= link_to 'Destroy', admin_additional_path(additional), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Additional', new_admin_additional_path, class: "btn btn-primary"

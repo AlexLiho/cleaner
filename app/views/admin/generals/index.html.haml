@@ -1,0 +1,27 @@
+%h1 Listing generals
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Price
+      %th Time for job
+      %th
+      %th
+      %th
+
+  %tbody
+    - @generals.each do |general|
+      %tr
+        %td= general.title
+        %td= general.description
+        %td= general.price
+        %td= general.time_for_job
+        %td= link_to 'Show', admin_general_path(general)
+        %td= link_to 'Edit', edit_admin_general_path(general)
+        %td= link_to 'Destroy', admin_general_path(general), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New General', new_admin_general_path, class: "btn btn-primary"

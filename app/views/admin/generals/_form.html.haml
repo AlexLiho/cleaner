@@ -1,0 +1,17 @@
+= form_for [:admin, @general] do |f|
+  = render 'errors', object: @general
+
+  %p
+    = f.label :title
+    = f.text_area :title, class: "form-control"
+  %p
+    = f.label :description
+    = f.text_area :description, class: "form-control"
+  %p
+    = f.label :price
+    = f.text_field :price, class: "form-control"
+  %p
+    = f.label :time_for_job
+    = f.text_field :time_for_job, maxlength: 3
+  .actions
+    = f.submit 'Save', class: "btn btn-primary"

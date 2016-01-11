@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @order.name
+%p
+  %b Phone:
+  = @order.phone
+%p
+  %b Comment:
+  = @order.comment
+%p
+  %b Total price:
+  = @order.total_price
+%p
+  %b Total time for gob:
+  = @order.total_time_for_gob
+%p
+  %b Wishes date:
+  = @order.wishes_date
+%p
+  %b Cleaners date:
+  = @order.cleaners_date
+
+= link_to 'Edit', edit_admin_order_path(@order)
+\|
+= link_to 'Back', admin_orders_path

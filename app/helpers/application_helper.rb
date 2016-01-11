@@ -6,4 +6,8 @@ module ApplicationHelper
 			"pages/#{page.id}"
 		end
 	end
+
+	def total_price
+  		self.quantity * self.product.price
+    end
 end

@@ -1,0 +1,13 @@
+%p
+  %b Photo:
+  = image_tag @employe.image_url, class: "img-circle"
+
+%h1= @employe.name
+
+%p
+  %b Comment:
+  = @employe.comment
+
+= link_to 'Edit', edit_admin_employe_path(@employe)
+\|
+= link_to 'Back', admin_employes_path
